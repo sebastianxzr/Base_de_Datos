@@ -9,11 +9,18 @@ Lista el nombre de todos los productos que hay en la tabla producto.
 
 1. Lista los nombres y los precios de todos los productos de la tabla producto.
 
+  SELECT nombre FROM productos
+
 2. Lista todas las columnas de la tabla producto.
 
+  SELECT * FROM productos
 
 3. Devuelve una lista con el nombre del producto, precio y nombre de fabricante de
 todos los productos de la base de datos.
+
+  SELECT producto.nombre, precio, fabricante.nombre
+FROM producto INNER JOIN fabricante
+ON producto.codigo_fabricante = fabricante.codigo
 
 Subconsultas (En la cláusula WHERE)
 1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER
