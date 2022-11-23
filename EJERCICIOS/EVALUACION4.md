@@ -45,3 +45,25 @@ Una vez creados los triggers escribe varias sentencias de inserción y actualiza
 sobre la tabla alumnos y verifica que los triggers se están ejecutando
 correctamente.
 
+Respuesta:
+
+DROP DATABASE IF EXISTS test;
+CREATE DATABASE test;
+USE test;
+
+CREATE TABLE alumnos (
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(50) NOT NULL,
+    apellido1 VARCHAR(50) NOT NULL,
+    apellido2 VARCHAR(50), 
+    nota FLOAT
+DROP TRIGGER IF EXISTS trigger_check_nota_before_insert$$
+CREATE TRIGGER trigger_check_nota_before_insert
+BEFORE INSERT
+ON alumnos FOR EACH ROW
+
+DROP TRIGGER IF EXISTS trigger_check_nota_before_update$$
+CREATE TRIGGER trigger_check_nota_before_update
+BEFORE UPDATE
+ON alumnos FOR EACH ROW
+
