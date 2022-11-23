@@ -9,6 +9,8 @@ Ejercicio:
 
 1. ¿Qué es un DataWarehouse?(valor 2)
 
+es un almacén electrónico donde generalmente una empresa u organización mantiene una gran cantidad de información
+
 2. Realiza un diseño del modelo en estrella (valor 2)
 
 3. Realiza un diseño del modelo copo de nieve (valor 2)
