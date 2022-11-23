@@ -19,9 +19,17 @@ Subconsultas (En la cláusula WHERE)
 1. Devuelve todos los productos del fabricante Lenovo. (Sin utilizar INNER
 JOIN).
 
+  SELECT * FROM producto WHERE codigo_fabricante = (   SELECT codigo   FROM
+fabricante  WHERE nombre WHERE nombre = 'Lenovo')
 
 2. Devuelve todos los datos de los productos que tienen el mismo precio que el
 producto más caro del fabricante Lenovo. (Sin utilizar INNER JOIN).
 
+  SELECT   *   FROM   producto   WHERE   precio   =   (   SELECT   MAX(precio)   FROM
+producto  WHERE producto.codigo_fabricante = (  SELECT codigo  FROM fabricante  
+WHERE nombre WHERE nombre = 'Lenovo'))
 
 3. Lista el nombre del producto más caro del fabricante Lenovo.
+  
+  SELECT producto.nombre  FROM   producto  WHERE  (SELECT MAX(precio)   FROM
+producto, fabricante WHERE fabricante.nombre = "Lenovo");
